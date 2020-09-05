@@ -1,0 +1,37 @@
+<%- include('partials/header.ejs') %>
+<nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+    <div class="container"><a class="navbar-brand" href="#" style="">ResearchHUB</a><button data-toggle="collapse"
+            class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav mr-auto">
+                <li role="presentation" class="nav-item"></li>
+            </ul>
+            <%if(!user){%>
+            <span class="navbar-text actions"><a class="login" href="/auth/login">Log In</a></span>&nbsp;&nbsp;
+            <%}else{%>
+            <span class="navbar-text actions"><a class="login" href="/auth/logout">Log Out</a></span>
+            <%}%>
+        </div>
+    </div>
+</nav>
+
+<!-- Form for donation creation -->
+<%if(user){%>
+            <div class="container" style="width:30%">
+                <h2>Logged in is <%=user.username%></h2>
+                <div class="contact-clean">
+                    <form method="post" action="/create/new-donation">
+                        <h2 class="text-center">Raise Fund</h2>
+                        <div class="form-group"><input type="text" class="form-control" name="title"
+                                placeholder="Title" /></div>
+                        <div class="form-group"><textarea class="form-control" name="message" placeholder="Body"
+                                rows="14"></textarea></div>
+                        <div class="form-group"><button class="btn btn-primary" type="submit">Submit </button></div>
+                    </form>
+                </div>
+            </div>
+            <%}else{%>
+            <h1>Please Login to create a new Donation</h1>
+            <%}%>
+<%- include('partials/footer.ejs') %>
