@@ -46,10 +46,14 @@ db.on('error', err => {
 //routes
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
+const createRouter = require("./routes/create");
+const showRouter = require("./routes/show")
 
 // use route files
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
+app.use("/create", createRouter);
+app.use("/show", showRouter);
 
 //connect to port
 app.listen(PORT, () => {
