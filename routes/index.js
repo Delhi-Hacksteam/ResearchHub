@@ -7,13 +7,12 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 // <<<<<<< HEAD
 // /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render("index");
+    res.render("landing");
 })
 // get registration page
 router.get('/register', function (req, res) {
     res.render('register');
 })
-
 // get login page
 router.get('/login', function (req, res) {
     res.render('login');
