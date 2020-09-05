@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const Donation = require("../models/donation-model");
+const Event = require("../models/event-model");
 const User = require("../models/user-model");
 
 router.get("/new-donation", (req, res) => {
