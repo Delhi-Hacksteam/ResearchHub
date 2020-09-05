@@ -6,7 +6,19 @@ var bodyParser = require('body-parser');
 const User = require('../models/user-model');
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
+<<<<<<< HEAD
 
+=======
+// <<<<<<< HEAD
+// /* GET home page. */
+router.get('/', function (req, res, next) {
+    res.render("index");
+})
+// get registration page
+router.get('/register', function (req, res) {
+    res.render('register');
+})
+>>>>>>> a86f49dc4e00a516ff1ffe13d922ca8682e6ac57
 
 // Landing page
 router.get('/', authCheck, (req, res) => {
