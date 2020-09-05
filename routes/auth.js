@@ -11,6 +11,11 @@ router.get('/google', (req, res) => {
 	res.send('login with google');
 });
 
+router.get('/facebook', (req, res) => {
+	//handle with passport
+	res.send('login with facebook');
+});
+
 //auth logout
 router.get('/logout', (req, res) => {
 	//handle with passport
