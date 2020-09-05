@@ -1,0 +1,23 @@
+{
+  "name": "researchhub",
+  "version": "1.0.0",
+  "description": "A portal for connecting Researchers with voleenters\u001b[D\u001b[D\u001b[D\u001b[D\u001bu\u001b[C\u001b[C\u001b[\u001b[\u001b[C\u001b[C\u001b[C\u001b[unteers",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Delhi-Hacksteam/ResearchHub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Delhi-Hacksteam/ResearchHub/issues"
+  },
+  "homepage": "https://github.com/Delhi-Hacksteam/ResearchHub#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express-session": "^1.17.1"
+  }
+}
