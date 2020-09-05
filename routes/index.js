@@ -6,7 +6,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 // /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.send('start project');
+    res.render("index");
 })
 
 module.exports = router;
