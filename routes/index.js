@@ -4,11 +4,11 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-// GET home page. 
-router.get('/', function (req, res) {
-    res.send('start project');
+// <<<<<<< HEAD
+// /* GET home page. */
+router.get('/', function (req, res, next) {
+    res.render("index");
 })
-
 // get registration page
 router.get('/register', function (req, res) {
     res.render('register');
