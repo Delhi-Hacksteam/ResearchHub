@@ -1,10 +1,13 @@
-const express = require("express");
-const bodyParser = require("body-parser");
+const express = require('express');
+const bodyParser = require('body-parser');
 const path = require('path');
 const session = require('express-session');
+const PORT = 3000;
 
+//routes
 var app = express();
-var indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index');
+const authRouter = require('./routes/auth');
 
 // body parser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,15 +20,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // attach and use public folder with correct url
-app.use('/public',express.static(path.join(__dirname, 'public')));
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // use route files
 app.use('/', indexRouter);
-
+app.use('/auth', authRouter);
 
 //connect to port
-app.listen(3000, () => {
-    console.log(`Listening on PORT 3000`);
-  });
+app.listen(PORT, () => {
+	console.log(`Listening on PORT 3000`);
+});
 
 module.exports = app;
