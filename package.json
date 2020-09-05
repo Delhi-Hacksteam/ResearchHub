@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Delhi-Hacksteam/ResearchHub#readme",
   "dependencies": {
     "ejs": "^3.1.5",
+    "express": "^4.17.1",
     "express-session": "^1.17.1"
   }
 }
