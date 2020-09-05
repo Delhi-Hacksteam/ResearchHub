@@ -1,3 +1,7 @@
 /node_modules
 package-lock.json
+<<<<<<< HEAD
+config/keys.js
+=======
 /spare
+>>>>>>> a86f49dc4e00a516ff1ffe13d922ca8682e6ac57

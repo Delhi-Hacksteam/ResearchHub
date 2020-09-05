@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Create a stylish landing page for your business startup and get leads for the offered services with this HTML landing page template.">
-    <meta name="author" content="Inovatik">
 
-    <!-- Website Title -->
-    <title>Research Hub</title>
-    
-    <!-- Styles -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
-    <link href="/public/css/bootstrap.css" rel="stylesheet">
-    <link href="/public/css/fontawesome-all.css" rel="stylesheet">
-    <link href="/public/css/swiper.css" rel="stylesheet">
-	<link href="/public/css/magnific-popup.css" rel="stylesheet">
-	<link href="/public/css/styles.css" rel="stylesheet">
-	
-	<!-- Favicon  -->
-    <link rel="icon" href="/public/imgs/favicon.png">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/public/css/Login-Box-En.css">
+	<link rel="stylesheet" href="/public/css/Login-Form-Clean.css">
+	<link rel="stylesheet" href="/public/css/Login-Form-Dark.css">
+	<link rel="stylesheet" href="/public/css/Navigation-Clean.css">
+	<link rel="stylesheet" href="/public/css/Navigation-with-Button.css">
 </head>
+
+<body>
+	<nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+		<a class="navbar-brand" href="#">ResearchHub</a><button data-toggle="collapse" data-target="#navcol-1"
+			class="navbar-toggler"><span class="sr-only">Toggle navigation</span><span
+				class="navbar-toggler-icon"></span></button>
+		<div class="collapse navbar-collapse" id="navcol-1">
+			<ul class="nav navbar-nav mr-auto"></ul>
+			<%if(!user){%>
+			<span class="navbar-text actions"><a class="login" href="/auth/login">Log
+					In</a></span>
+			<%}else{%>
+			<span class="navbar-text actions"><a class="login" href="/auth/logout">Log
+					Out</a></span>
+			<%}%>
+		</div>
+	</nav>
