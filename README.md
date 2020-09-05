@@ -84,3 +84,26 @@ git commit -m "<commit name>"     (to save your commit)
 git push                          (to push your changes to your repo)  
 ```  
   
+## google oath20 setup
+create google+ api from consolehttps://console.developers.google.com/
+set javascript origin to http://localhost:3000
+set redirect uri to http://localhost:3000/auth/google/redirect
+note your_client_id and your_secret_id
+
+create a file named keys.js under config folder and paste the code below
+
+```javascript
+module.exports = {
+    google: {
+        clientID: your_client_id,
+        clientSecret: your_secret_id
+    }
+}
+
+this will setup the oauth
+```
+
+## mongodb setup
+
+have an mongo instance running
+code connects to the local mongo session

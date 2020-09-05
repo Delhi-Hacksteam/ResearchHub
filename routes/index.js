@@ -1,27 +1,22 @@
 var express = require('express');
 var router = express.Router();
+var authCheck = require("./auth-check")
 
 var bodyParser = require('body-parser');
+const User = require('../models/user-model');
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-// GET home page. 
-router.get('/', function (req, res) {
-    res.send('start project');
+
+
+// Landing page
+router.get('/', authCheck, (req, res) => {
+    res.redirect("/index",);
+    // res.send("you are logged in as " + req.user.username);
 })
 
-// get registration page
-router.get('/register', function (req, res) {
-    res.render('register');
-})
-
-// get login page
-router.get('/login', function (req, res) {
-    res.render('login');
-})
-
-// get petition page
-router.get('/petition', function (req, res, next) {
-    res.render('petition');
-})
+router.get('/index', (req, res) => {
+    res.render("index", { user: req.user });
+}
+)
 
 module.exports = router;
