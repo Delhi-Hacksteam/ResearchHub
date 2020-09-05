@@ -22,12 +22,9 @@
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
-<<<<<<< HEAD
     "mongoose": "^5.10.3",
     "passport": "^0.4.1",
-    "passport-google-oauth": "^2.0.0"
-=======
+    "passport-google-oauth": "^2.0.0",
     "nodemon": "^2.0.4"
->>>>>>> a86f49dc4e00a516ff1ffe13d922ca8682e6ac57
   }
 }
