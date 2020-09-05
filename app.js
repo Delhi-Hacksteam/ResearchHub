@@ -6,6 +6,7 @@ const PORT = 3000;
 
 //routes
 var app = express();
+const homeRouter=require('./routes/home')
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 
@@ -23,6 +24,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // use route files
+app.use('/home',homeRouter);
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 
