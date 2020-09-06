@@ -23,7 +23,7 @@
                 <h5 class="card-title"><%=event.title%></h5>
                 <h6 class="card-subtitle mb-2 text-muted">Author: <%=user.username%></h6>
                 <p class="card-text"><%=event.message%>.</p>
-                <a href="#" class="card-link">Volunteer</a>
+                <a href="/create/addVoluteer/<%=event._id%>" class="card-link">Volunteer</a>
             </div>
         </div>
         <%})%>
