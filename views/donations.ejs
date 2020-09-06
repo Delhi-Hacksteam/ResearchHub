@@ -24,7 +24,7 @@
                 <h5 class="card-title"><%=donation.title%></h5>
                 <h6 class="card-subtitle mb-2 text-muted">Author: <%=user.username%></h6>
                 <p class="card-text"><%=donation.message%>.</p>
-                <a href="#" class="card-link">Donate</a>
+                <a target="_blank" href=<%=donation.paymentLink%> class="btn">Donation</a>
             </div>
         </div>
         <%})%>
