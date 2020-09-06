@@ -2,10 +2,11 @@ const router = require('express').Router();
 const passport = require("passport");
 const authRouter = require('./index');
 
+/*
 //auth login
 router.get('/login', (req, res) => {
 	res.render('login', { user: req.user });
-});
+}); */
 
 //auth login with google
 router.get('/google', passport.authenticate("google", {
