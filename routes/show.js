@@ -8,10 +8,25 @@ router.get("/donations", (req, res) => {
     });
 })
 
-router.get("/events", (req, res) => {
-    Event.find({}, function (err, events) {
-        res.render("events", { user: req.user, events: events });
-    });
+router.get("/events/:page", (req, res) => {
+    var perPage = 3
+    var page = req.params.page || 1
+  
+    Event.find({})
+    .skip((perPage * page) - perPage)
+    .limit(perPage)
+    .exec(function (err, events) {
+        Event.count().exec(function (err, count) {
+        if (err) return next(err)
+        res.render('events', {
+          user: req.user,
+          events: events, 
+          current: page,
+          pages: Math.ceil(count / perPage)
+        })
+      })
+    })
 })
-
+        
+       
 module.exports = router;
