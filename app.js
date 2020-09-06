@@ -9,6 +9,8 @@ const mongoose = require("mongoose");
 const PORT = 3000;
 const keys = require("./routes/config/keys")
 const passport = require("passport");
+const dotenv = require('dotenv');
+dotenv.config();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
