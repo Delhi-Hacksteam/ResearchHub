@@ -1,6 +1,18 @@
 <%- include('partials/header.ejs') %>
 
 <!-- Show events -->
+<div class="container">
+    <%events.forEach((event)=>{%>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"><%=event.title%></h5>
+                <h6 class="card-subtitle mb-2 text-muted">Author: <%=user.username%></h6>
+                <p class="card-text"><%=event.message%>.</p>
+                <a href="/create/addVoluteer/<%=event._id%>" class="card-link">Volunteer</a>
+            </div>
+        </div>
+        <%})%>
+
 
     <div id="events" class="cards-2">
         <div class="container">
