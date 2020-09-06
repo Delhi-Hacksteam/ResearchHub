@@ -55,6 +55,17 @@ app.use('/auth', authRouter);
 app.use("/create", createRouter);
 app.use("/show", showRouter);
 
+// catch 404 and forward to error handler
+app.use(function (req, res) {
+  res.render('error');
+});
+
+// server error 500
+app.use(function (error, req, res) {
+  res.status(500);
+  res.render('error');
+});
+
 //connect to port
 app.listen(PORT, () => {
 	console.log(`Listening on PORT ${PORT}`);
