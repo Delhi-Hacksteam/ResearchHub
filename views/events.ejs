@@ -1,79 +1,80 @@
 <%- include('partials/header.ejs') %>
-    <div id="events" class="cards-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12"><br><br><br>
-                    <h2>Petitions Needs your attention</h2>
-                    <p class="p-heading p-large">We've prepared pricing plans for all budgets so you can get started right away. They're great for small companies and large organizations</p>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <%events.forEach((event)=>{%>
-                    <!-- Card-->
-                    <div class="card">
-                       
-                        <div class="card-body">
-                            <div class="card-title">   <% if ( event.title.length >= 30) { %>
-                                <%= event.title.slice(0,29) %>...
-                                <% } else { %>
-                                <%= event.title %>
-                                <% } %></div>
-                           <!-- <div class="card-subtitle">Author: <%=user.username%></div> -->
-                            <hr class="cell-divide-hr">
-                          <!--  <div class="price">
+<div id="events" class="cards-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12"><br><br><br>
+                <h2>Join Events, Volunteer and help for Social Good</h2>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <%events.forEach((event)=>{%>
+                <!-- Card-->
+                <div class="card">
+
+                    <div class="card-body">
+                        <div class="card-title"> <% if ( event.title.length >= 30) { %>
+                            <%= event.title.slice(0,29) %>...
+                            <% } else { %>
+                            <%= event.title %>
+                            <% } %></div>
+                        <!-- <div class="card-subtitle">Author: <%=user.username%></div> -->
+                        <hr class="cell-divide-hr">
+                        <!--  <div class="price">
                                 <span class="currency">$</span><span class="value">199</span>
                                 <div class="frequency">monthly</div>
                             </div> 
                             <hr class="cell-divide-hr"> -->
-                            <ul class="list-unstyled li-space-lg">
-                                <a href="/show/fullevent/<%= event.id %>">
+                        <ul class="list-unstyled li-space-lg">
+                            <a href="/show/fullevent/<%= event.id %>">
                                 <li class="media"></li>
                                 <% if ( event.body.length >= 101) { %>
-                                    <%= event.body.slice(0,100) %>...
-                                    <% } else { %>
-                                    <%= event.body %>.
-                                    <% } %></a>
-                                
-                            </ul>
-                            <div class="button-wrapper">
-                                <a class="btn-solid-reg page-scroll" href="href="/create/addVoluteer/<%=event._id%>"">Volunteer</a>
-                            </div>
+                                <%= event.body.slice(0,100) %>...
+                                <% } else { %>
+                                <%= event.body %>.
+                                <% } %>
+                            </a>
+
+                        </ul>
+                        <div class="button-wrapper">
+                            <a class="btn-solid-reg page-scroll" href="href="
+                                /create/addVoluteer/<%=event._id%>"">Volunteer</a>
                         </div>
-                    </div> <!-- end of card -->
-                    <!-- end of card -->
-                    <%})%>
-                    
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <% if (pages > 0) { %>
-                <ul class="pagination text-center" style="text-align: center;">
-                  <% if (current == 1) { %>
-                  <li class="disabled"><a>First</a></li>
-                  <% } else { %>
-                  <li><a href="/show/events/1">First</a></li>
-                  <% } %>
-                  <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
-                  <% if (i !== 1) { %>
-                  <li class="disabled"><a>...</a></li>
-                  <% } %>
-                  <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
-                  <% if (i == current) { %>
-                  <li class="active"><a><%= i %></a></li>
-                  <% } else { %>
-                  <li><a href="/show/events/<%= i %>"><%= i %></a></li>
-                  <% } %>
-                  <% if (i == Number(current) + 4 && i < pages) { %>
-                  <li class="disabled"><a>...</a></li>
-                  <% } %>
-                  <% } %>
-                  <% if (current == pages) { %>
-                  <li class="disabled"><a>Last</a></li>
-                  <% } else { %>
-                  <li><a href="/show/events/<%= pages %>">Last</a></li>
-                  <% } %>
-                </ul>
-                <% } %>
-        </div> <!-- end of container -->
-    </div> 
-    <%- include('partials/footer.ejs') %>
+                    </div>
+                </div> <!-- end of card -->
+                <!-- end of card -->
+                <%})%>
+
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <% if (pages > 0) { %>
+        <ul class="pagination text-center" style="text-align: center;">
+            <% if (current == 1) { %>
+            <li class="disabled"><a>First</a></li>
+            <% } else { %>
+            <li><a href="/show/events/1">First</a></li>
+            <% } %>
+            <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+            <% if (i !== 1) { %>
+            <li class="disabled"><a>...</a></li>
+            <% } %>
+            <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+            <% if (i == current) { %>
+            <li class="active"><a><%= i %></a></li>
+            <% } else { %>
+            <li><a href="/show/events/<%= i %>"><%= i %></a></li>
+            <% } %>
+            <% if (i == Number(current) + 4 && i < pages) { %>
+            <li class="disabled"><a>...</a></li>
+            <% } %>
+            <% } %>
+            <% if (current == pages) { %>
+            <li class="disabled"><a>Last</a></li>
+            <% } else { %>
+            <li><a href="/show/events/<%= pages %>">Last</a></li>
+            <% } %>
+        </ul>
+        <% } %>
+    </div> <!-- end of container -->
+</div>
+<%- include('partials/footer.ejs') %>
