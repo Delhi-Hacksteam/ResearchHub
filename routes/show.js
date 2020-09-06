@@ -9,6 +9,16 @@ router.get("/donations", (req, res) => {
     });
 })
 
+// fulldonation page
+router.get('/fullinfo/:id',  (req, res) => {
+    Donation.findById(req.params.id, function (err, donation) {
+      res.render('fulldonation', {
+        donation: donation,
+        user: req.user
+      });
+    });
+  });
+
 // all events page
 router.get("/events/:page", (req, res) => {
     var perPage = 9

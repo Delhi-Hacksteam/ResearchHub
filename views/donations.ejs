@@ -1,33 +1,56 @@
-<%- include('partials/header.ejs') %>
-<nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
-    <a class="navbar-brand" href="#" style="">ResearchHUB</a><button data-toggle="collapse" class="navbar-toggler"
-        data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
-            class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="navcol-1">
-        <ul class="nav navbar-nav mr-auto">
-            <li role="presentation" class="nav-item"></li>
-        </ul>
-        <%if(!user){%>
-        <span class="navbar-text actions"><a class="login" href="/auth/login">Log In</a></span>&nbsp;&nbsp;
-        <%}else{%>
-        <span class="navbar-text actions"><a class="login" href="/auth/logout">Log Out</a></span>
-        <%}%>
-        </div>
-    </div>
-</nav>
 
-<!-- Show donations -->
-<div class="container">
-    <%donations.forEach((donation)=>{%>
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title"><%=donation.title%></h5>
-                <h6 class="card-subtitle mb-2 text-muted">Author: <%=user.username%></h6>
-                <p class="card-text"><%=donation.message%>.</p>
-                <a target="_blank" href=<%=donation.paymentLink%> class="btn">Donation</a>
-            </div>
-        </div>
-        <%})%>
+    <%- include('partials/header.ejs') %>
 
-    </div>
-    <%- include('partials/footer.ejs') %>
+    <!-- Show events -->
+    
+        <div id="events" class="cards-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12"><br><br><br>
+                        <h2>Petitions Needs your attention</h2>
+                        <p class="p-heading p-large">We've prepared pricing plans for all budgets so you can get started right away. They're great for small companies and large organizations</p>
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <%donations.forEach((donation)=>{%>
+                        <!-- Card-->
+                        <div class="card">
+                           
+                            <div class="card-body">
+                                <div class="card-title">   <% if ( donation.title.length >= 30) { %>
+                                    <%= donation.title.slice(0,29) %>...
+                                    <% } else { %>
+                                    <%= donation.title %>
+                                    <% } %></div>
+                               <!-- <div class="card-subtitle">Author: <%=user.username%></div> -->
+                                <hr class="cell-divide-hr">
+                              <!--  <div class="price">
+                                    <span class="currency">$</span><span class="value">199</span>
+                                    <div class="frequency">monthly</div>
+                                </div> 
+                                <hr class="cell-divide-hr"> -->
+                                <ul class="list-unstyled li-space-lg">
+                                    <a href="/show/fullinfo/<%= donation.id %>">
+                                    <li class="media"></li>
+                                    <% if ( donation.body.length >= 101) { %>
+                                        <%= donation.body.slice(0,100) %>...
+                                        <% } else { %>
+                                        <%= donation.body %>.
+                                        <% } %></a>
+                                    
+                                </ul>
+                                <div class="button-wrapper">
+                                    <a class="btn-solid-reg page-scroll" href="#">Donate now</a>
+                                </div>
+                            </div>
+                        </div> <!-- end of card -->
+                        <!-- end of card -->
+                        <%})%>
+                        
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+      
+            </div> <!-- end of container -->
+        </div> 
+        <%- include('partials/footer.ejs') %>
