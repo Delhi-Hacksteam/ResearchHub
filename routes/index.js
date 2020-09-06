@@ -65,9 +65,10 @@ router.get('/detail', authCheck, (req, res) => {
     // res.send("you are logged in as " + req.user.username);
 }) */
 
+
 // contact page 
 router.get('/contact', function (req, res) {
-    res.render('contact', { user: req.session });
+    res.render('contact', { user: req.user });
   });
 
 //contact form data

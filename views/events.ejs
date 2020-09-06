@@ -45,7 +45,7 @@
                             </div> 
                             <hr class="cell-divide-hr"> -->
                             <ul class="list-unstyled li-space-lg">
-                                <a href="/show/fullevent">
+                                <a href="/show/fullevent/<%= event.id %>">
                                 <li class="media"></li>
                                 <% if ( event.body.length >= 101) { %>
                                     <%= event.body.slice(0,100) %>...
