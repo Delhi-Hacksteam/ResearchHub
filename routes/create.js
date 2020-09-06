@@ -18,7 +18,7 @@ router.post("/new-donation", (req, res) => {
                 paymentLink: req.body.paymentLink
             }).save().then(newDonation => {
                 console.log("new donation created " + newDonation);
-                res.redirect("/");
+                res.redirect("/show/donations");
             })
         } else {
             res.redirect("/auth/logout");

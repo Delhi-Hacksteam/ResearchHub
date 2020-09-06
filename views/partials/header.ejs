@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Website Title -->
-    <title>Evolo - StartUp HTML Landing Page Template</title>
+    <title>RESEARCHHUB</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext"
@@ -40,7 +40,7 @@
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Evolo</a> -->
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="/"><img src="/public/imgs/logo.svg" alt="alternative"></a>
+        <a class="navbar-brand logo-image" href="/"></a>
 
         <!-- Mobile Menu Toggle Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
@@ -50,48 +50,47 @@
         </button>
         <!-- end of mobile menu toggle button -->
 
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#header">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#services">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#pricing">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#request">Request</a>
-                </li>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link page-scroll" href="/">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link page-scroll" href="/show/events/1">Events</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link page-scroll" href="/show/donations">Donations</a>
+              </li>
+            <!--  <li class="nav-item">
+                  <a class="nav-link page-scroll" href="#request">Request</a>
+              </li>  -->
 
-                <!-- Dropdown Menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link page-scroll" href="#about">About</a>
-                    <!-- <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+              <!-- Dropdown Menu -->          
+             <!-- <li class="nav-item dropdown">
+                  <a class="nav-link page-scroll" href="/about">About</a>
+                  <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">Terms Conditions</span></a>
                       <div class="dropdown-items-divide-hr"></div>
                       <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">Privacy Policy</span></a>
-                  </div> -->
-                </li>
-                <!-- end of dropdown menu -->
+                  </div>
+              </li> -->
+              <!-- end of dropdown menu --> 
 
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#contact">Contact</a>
-                </li>
-                <% if (user) {%>
-                <% var name = user.username %>
-                <% var use = name.split(' ')%>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button"
-                        aria-haspopup="true" aria-expanded="false" style="color: #00bfd8;"><%= use[0]%></a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#"><span class="item-text">My Profile</span></a>
-                        <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="/auth/logout"><span class="item-text">Logout</span></a>
-                    </div>
-                </li>
+              <li class="nav-item">
+                  <a class="nav-link page-scroll" href="/contact">Contact</a>
+              </li>
+                  <% if (user) {%>
+                      <% var name = user.username %> 
+                      <% var use = name.split(' ')%> 
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #00bfd8;"><%= use[0]%></a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="/create/new-event"><span class="item-text">+ Create</span></a>
+                              <div class="dropdown-items-divide-hr"></div>
+                              <a class="dropdown-item" href="/auth/logout"><span class="item-text">Logout</span></a>
+                          </div>
+                      </li>
 
                 <% }else{%>
                 <li class="nav-item">

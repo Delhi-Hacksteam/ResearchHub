@@ -1,7 +1,6 @@
 <%- include('partials/header.ejs') %>
 
 <!-- Show events -->
-<<<<<<< HEAD
 <div class="container">
     <%events.forEach((event)=>{%>
         <div class="card" style="width: 18rem;">
@@ -13,8 +12,6 @@
             </div>
         </div>
         <%})%>
-=======
->>>>>>> ba2d78a68cff3a29e2edb1d1945015d34688f9ad
 
 
     <div id="events" class="cards-2">
@@ -45,7 +42,7 @@
                             </div> 
                             <hr class="cell-divide-hr"> -->
                             <ul class="list-unstyled li-space-lg">
-                                <a href="/show/fullevent">
+                                <a href="/show/fullevent/<%= event.id %>">
                                 <li class="media"></li>
                                 <% if ( event.body.length >= 101) { %>
                                     <%= event.body.slice(0,100) %>...
@@ -55,7 +52,7 @@
                                 
                             </ul>
                             <div class="button-wrapper">
-                                <a class="btn-solid-reg page-scroll" href="#">Donate</a>
+                                <a class="btn-solid-reg page-scroll" href="href="/create/addVoluteer/<%=event._id%>"">Volunteer</a>
                             </div>
                         </div>
                     </div> <!-- end of card -->
