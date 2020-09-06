@@ -42,7 +42,7 @@ router.post("/new-event", (req, res) => {
                 volunteers: 0,
             }).save().then(newEvent => {
                 console.log("new event created " + newEvent);
-                res.redirect("/");
+                res.redirect("/show/events/1");
             })
         } else {
             res.redirect("/auth/logout");

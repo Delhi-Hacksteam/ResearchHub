@@ -9,6 +9,8 @@ const mongoose = require("mongoose");
 const PORT = 3000;
 const keys = require("./routes/config/keys")
 const passport = require("passport");
+const dotenv = require('dotenv');
+dotenv.config();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -54,6 +56,17 @@ app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use("/create", createRouter);
 app.use("/show", showRouter);
+
+// catch 404 and forward to error handler
+app.use(function (req, res) {
+  res.render('error');
+});
+
+// server error 500
+app.use(function (error, req, res) {
+  res.status(500);
+  res.render('error');
+});
 
 //connect to port
 app.listen(PORT, () => {
