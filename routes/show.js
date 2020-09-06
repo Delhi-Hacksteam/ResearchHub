@@ -2,14 +2,16 @@ const router = require("express").Router();
 const Donation = require("../models/donation-model");
 const Event = require("../models/event-model");
 
+// all donations page
 router.get("/donations", (req, res) => {
     Donation.find({}, function (err, donations) {
         res.render("donations", { user: req.user, donations: donations });
     });
 })
 
+// all events page
 router.get("/events/:page", (req, res) => {
-    var perPage = 3
+    var perPage = 9
     var page = req.params.page || 1
   
     Event.find({})
@@ -27,6 +29,17 @@ router.get("/events/:page", (req, res) => {
       })
     })
 })
+
+// fullevent page
+router.get('/fullevent/:id',  (req, res) => {
+    Event.findById(req.params.id, function (err, events) {
+      res.render('fullevent', {
+        events: events,
+        user: req.user
+      });
+    });
+  });
+
         
        
 module.exports = router;

@@ -52,32 +52,32 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
           <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                  <a class="nav-link page-scroll" href="#header">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link page-scroll" href="/">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link page-scroll" href="#services">Services</a>
+                  <a class="nav-link page-scroll" href="/show/events/1">Events</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link page-scroll" href="#pricing">Pricing</a>
+                  <a class="nav-link page-scroll" href="/show/donations">Volunteers</a>
               </li>
-              <li class="nav-item">
+            <!--  <li class="nav-item">
                   <a class="nav-link page-scroll" href="#request">Request</a>
-              </li>
+              </li>  -->
 
               <!-- Dropdown Menu -->          
-              <li class="nav-item dropdown">
-                  <a class="nav-link page-scroll" href="#about">About</a>
-                 <!-- <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+             <!-- <li class="nav-item dropdown">
+                  <a class="nav-link page-scroll" href="/about">About</a>
+                  <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">Terms Conditions</span></a>
                       <div class="dropdown-items-divide-hr"></div>
                       <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">Privacy Policy</span></a>
-                  </div> -->
-              </li>
-              <!-- end of dropdown menu -->
+                  </div>
+              </li> -->
+              <!-- end of dropdown menu --> 
 
               <li class="nav-item">
-                  <a class="nav-link page-scroll" href="#contact">Contact</a>
+                  <a class="nav-link page-scroll" href="/contact">Contact</a>
               </li>
                   <% if (user) {%>
                       <% var name = user.username %> 
@@ -85,7 +85,7 @@
                       <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #00bfd8;"><%= use[0]%></a>
                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="#"><span class="item-text">My Profile</span></a>
+                              <a class="dropdown-item" href="/create/new-event"><span class="item-text">+ Create</span></a>
                               <div class="dropdown-items-divide-hr"></div>
                               <a class="dropdown-item" href="/auth/logout"><span class="item-text">Logout</span></a>
                           </div>
